@@ -16,6 +16,10 @@
 		// word bank
 		var wordBank = ["bob", "linda", "tina", "gene", "louise"];
 
+		// computer needs to choose a word from bank at random
+		var compChoseWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+		console.log("RANDOM: " + compChoseWord); //works!! :)
+
 		// win counter
 		var wins = 0;
 
@@ -33,24 +37,57 @@
 
 		// i need to split up the words in the bank and replace them with _
 		// i need to split up the words in the bank and replace them with _
-		function testingSomething(wordToSplit){
+		// function splittingWords(wordToSplit){
+		// 	console.log(wordToSplit);
+		// 	var splitWord = wordToSplit.split("");
+		// 	console.log(splitWord);
+		// 	for (var i=0; i < splitWord.length; i++){
+		// 		splitWord[i] = ("_"); //can't figure out how to get rid of the commas when this prints to the page!! argh!!!!
+		// 	}
+		// 	console.log(splitWord);
+		// 	document.querySelector("#wordToGuess").innerHTML = "<h2>" + splitWord + "</h2>";
+		// }
+
+		function loadNewWord(){
+			dealingWithLetters(wordBank[0]);
+			dealingWithLetters(wordBank[1]);
+			dealingWithLetters(wordBank[2]);
+			dealingWithLetters(wordBank[3]);
+			dealingWithLetters(wordBank[4]);
+		}
+
+		// function guessingTheLetters(){
+		// 	// grab user letter
+		// 	document.onkeyup = function(event) {
+		// 		var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+		// 		console.log(letterGuessed); //works!!
+
+		// 		// i need to somehow compare the letters that the user guesses with the letters that are in the word to guess
+		// 		// i'm thinking this function and the splititngwords function ought to be one
+		// 	}
+		// }
+
+		function dealingWithLetters(wordToSplit){
 			console.log(wordToSplit);
 			var splitWord = wordToSplit.split("");
 			console.log(splitWord);
-			for (var i=0; i < splitWord.length; i++){
-				splitWord[i] = ("_"); //can't figure out how to get rid of the commas when this prints to the page!! argh!!!!
-			}
-			console.log(splitWord);
+			// for (var i=0; i < splitWord.length; i++){
+			// 	splitWord[i] = ("_"); //can't figure out how to get rid of the commas when this prints to the page!! argh!!!!
+			// }
+			// console.log(splitWord);
 			document.querySelector("#wordToGuess").innerHTML = "<h2>" + splitWord + "</h2>";
+
+			document.onkeyup = function(event) {
+				var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+				console.log(letterGuessed); //works!!
+
+				for (var i=0; i < splitWord[i]; i++){
+					console.log("85: " + splitWord[i]);
+				}
+			}
 		}
 
-		function loadNewWord(){
-			testingSomething(wordBank[0]);
-			testingSomething(wordBank[1]);
-			testingSomething(wordBank[2]);
-			testingSomething(wordBank[3]);
-			testingSomething(wordBank[4]);
-		}
+		// guessingTheLetters();
 
 		loadNewWord();
 	</script>

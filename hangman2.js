@@ -2,6 +2,10 @@
 // word bank
 var wordBank = ["bob", "linda", "tina", "gene", "louise"];
 
+// computer needs to choose a word from bank at random
+var compChoseWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+console.log("RANDOM: " + compChoseWord); //works!! :)
+
 // win counter
 var wins = 0;
 
@@ -18,7 +22,7 @@ var letterNotInWordToGuess = [];
 var blanksReplacedByCorrectLetters = [];
 
 // i need to split up the words in the bank and replace them with _
-function testingSomething(wordToSplit){
+function splittingWords(wordToSplit){
 	console.log(wordToSplit);
 	var splitWord = wordToSplit.split("");
 	console.log(splitWord);
@@ -29,11 +33,11 @@ function testingSomething(wordToSplit){
 }
 
 function loadNewWord(){
-	testingSomething(wordBank[0]);
-	testingSomething(wordBank[1]);
-	testingSomething(wordBank[2]);
-	testingSomething(wordBank[3]);
-	testingSomething(wordBank[4]);
+	splittingWords(wordBank[0]);
+	splittingWords(wordBank[1]);
+	splittingWords(wordBank[2]);
+	splittingWords(wordBank[3]);
+	splittingWords(wordBank[4]);
 }
 
 loadNewWord();
